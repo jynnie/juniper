@@ -6,3 +6,7 @@
 
 @import "./components/Button.scss";
 @import "./components/Text.scss";
+
+.debug * {
+  outline: 1px solid red;
+}
