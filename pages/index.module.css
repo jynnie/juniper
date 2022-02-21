@@ -19,3 +19,14 @@
 .content {
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 960px) {
+  .sidenav {
+    display: none;
+  }
+
+  .main {
+    padding-right: var(--sp-lg);
+    padding-left: var(--sp-lg);
+  }
+}

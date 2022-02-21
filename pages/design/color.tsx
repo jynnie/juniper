@@ -259,42 +259,74 @@ const ALL_COLORS: { name: string; variable: string; color: string }[] = [
   },
 ];
 
-const SEMANTIC_HEADERS = ["Text", "Primary", "Success", "Warning", "Danger"];
-const SEMANTIC_COLORS: { name: string; variable: string }[] = [
+const SEMANTIC_COLORS: {
+  header: string;
+  caption?: string;
+  colors: { name: string; variable: string; caption?: string }[];
+}[] = [
   // Text
-  { name: "Default", variable: "--text-color" },
-  { name: "Header", variable: "--text-color-header" },
-  { name: "Caption", variable: "--text-color-caption" },
-  { name: "Code", variable: "--text-color-code" },
-  { name: "Link", variable: "--text-color-link" },
+  {
+    header: "Text",
+    colors: [
+      { name: "Default", variable: "--text-color", caption: "--gray0" },
+      { name: "Header", variable: "--text-color-header", caption: "--gray8" },
+      { name: "Caption", variable: "--text-color-caption", caption: "--gray4" },
+      { name: "Code", variable: "--text-color-code", caption: "--magenta" },
+      { name: "Link", variable: "--text-color-link", caption: "--blue" },
+    ],
+  },
 
   // Primary
-  { name: "Lighter", variable: "--primary-lighter" },
-  { name: "Light", variable: "--primary-light" },
-  { name: "Base", variable: "--primary" },
-  { name: "Dark", variable: "--primary-dark" },
-  { name: "Darker", variable: "--primary-darker" },
+  {
+    header: "Primary",
+    caption: "Cobalt",
+    colors: [
+      { name: "Lighter", variable: "--primary-lighter" },
+      { name: "Light", variable: "--primary-light" },
+      { name: "Base", variable: "--primary" },
+      { name: "Dark", variable: "--primary-dark" },
+      { name: "Darker", variable: "--primary-darker" },
+    ],
+  },
 
   // Success
-  { name: "Lighter", variable: "--success-lighter" },
-  { name: "Light", variable: "--success-light" },
-  { name: "Base", variable: "--success" },
-  { name: "Dark", variable: "--success-dark" },
-  { name: "Darker", variable: "--success-darker" },
+  {
+    header: "Success",
+    caption: "Blue",
+    colors: [
+      { name: "Lighter", variable: "--success-lighter" },
+      { name: "Light", variable: "--success-light" },
+      { name: "Base", variable: "--success" },
+      { name: "Dark", variable: "--success-dark" },
+      { name: "Darker", variable: "--success-darker" },
+    ],
+  },
 
   // Warning
-  { name: "Lighter", variable: "--warning-lighter" },
-  { name: "Light", variable: "--warning-light" },
-  { name: "Base", variable: "--warning" },
-  { name: "Dark", variable: "--warning-dark" },
-  { name: "Darker", variable: "--warning-darker" },
+  {
+    header: "Warning",
+    caption: "Amber",
+    colors: [
+      { name: "Lighter", variable: "--warning-lighter" },
+      { name: "Light", variable: "--warning-light" },
+      { name: "Base", variable: "--warning" },
+      { name: "Dark", variable: "--warning-dark" },
+      { name: "Darker", variable: "--warning-darker" },
+    ],
+  },
 
   // Danger
-  { name: "Lighter", variable: "--danger-lighter" },
-  { name: "Light", variable: "--danger-light" },
-  { name: "Base", variable: "--danger" },
-  { name: "Dark", variable: "--danger-dark" },
-  { name: "Darker", variable: "--danger-darker" },
+  {
+    header: "Danger",
+    caption: "Red",
+    colors: [
+      { name: "Lighter", variable: "--danger-lighter" },
+      { name: "Light", variable: "--danger-light" },
+      { name: "Base", variable: "--danger" },
+      { name: "Dark", variable: "--danger-dark" },
+      { name: "Darker", variable: "--danger-darker" },
+    ],
+  },
 ];
 
 export default function Color() {
@@ -320,19 +352,20 @@ export default function Color() {
           by default.
         </Text>
         <Flex col gap={sp("lg")}>
-          {SEMANTIC_HEADERS.map((head, i) => (
+          {SEMANTIC_COLORS.map((group, i) => (
             <Grid
               gridTemplateColumns={`var(--sp-x6) repeat(5, 1fr)`}
               columnGap={sp("sm")}
               rowGap={sp("md")}
             >
-              <Flex align="center" height={sp("x3")}>
+              <Flex col justify="center" height={sp("x3")}>
                 <Text h6 margin={0}>
-                  {head}
+                  {group.header}
                 </Text>
+                <Text>{group.caption}</Text>
               </Flex>
 
-              {SEMANTIC_COLORS.slice(5 * i, 5 * i + 5).map((c) => (
+              {group.colors.map((c) => (
                 <Flex col key={c.variable}>
                   <CopyToClipboardWrapper value={`var(${c.variable})`}>
                     <Box
@@ -340,10 +373,14 @@ export default function Color() {
                       height={sp("x3")}
                       borderRadius="var(--radius-rounded)"
                     />
-                    <Flex justify="space-between" gap={sp("xs")}>
+                    <Flex
+                      justify="space-between"
+                      gap={sp("xs")}
+                      paddingX={sp("xs")}
+                    >
                       <Text small>{c.name}</Text>
-                      <Text small secondary>
-                        {c.variable}
+                      <Text small secondary textAlign="right">
+                        {c.caption}
                       </Text>
                     </Flex>
                   </CopyToClipboardWrapper>
@@ -353,7 +390,7 @@ export default function Color() {
           ))}
         </Flex>
 
-        <Divider size={sp("xxxl")} />
+        <Divider size="xxxl" />
 
         <Heading h2>Exhaustive</Heading>
         <Grid colNum={5} columnGap={sp("sm")} rowGap={sp("md")}>
