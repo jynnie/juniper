@@ -39,6 +39,7 @@
     "@types/ui-box": "^2.0.0",
     "css-loader": "^5.0.1",
     "immer": "^9.0.6",
+    "juniper-ui": "^0.3.1",
     "next": "10.0.5",
     "rollup": "^2.40.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

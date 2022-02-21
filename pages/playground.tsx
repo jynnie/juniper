@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Button } from "juniper";
+import { Box, Flex, Button } from "juniper-ui";
 
 export default function Playground() {
   return (

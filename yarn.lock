@@ -7841,6 +7841,16 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+juniper-ui@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/juniper-ui/-/juniper-ui-0.3.1.tgz#7bc72a1c5dba818f02239cada181617f2cf0a8a6"
+  integrity sha512-c1Vi0NtYIIgnXE19m9dIgE7OM4U5I6lAkAnf2vQ/7nv9xG8aU5n+87RT/YHLk+/ED0UB18Rxo8O27TE3NH34Ww==
+  dependencies:
+    react "17.0.1"
+    react-dom "17.0.1"
+    react-feather "^2.0.9"
+    ui-box "^4.1.0"
+
 junk@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
