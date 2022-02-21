@@ -21,6 +21,7 @@ export function Flex({
   rv = false,
   inline = false,
   center = false,
+  wrap = false,
   justify,
   align,
   children,
@@ -37,6 +38,7 @@ export function Flex({
       display={inline ? "flex-inline" : "flex"}
       justifyContent={center ? "center" : justify}
       alignItems={center ? "center" : align}
+      flexWrap={wrap ? "wrap" : "nowrap"}
       {...props}
     >
       {children}
