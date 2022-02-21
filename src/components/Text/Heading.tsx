@@ -13,10 +13,11 @@ export function Heading({
   h4 = false,
   h5 = false,
   h6 = false,
+  secondary = false,
   children,
   ...props
 }: HeadingProps) {
-  let is: BasicTextProps["is"] = "h2";
+  let is: BasicTextProps["is"] = "h1";
   if (h1) is = "h1";
   else if (h2) is = "h2";
   else if (h3) is = "h3";
@@ -27,7 +28,9 @@ export function Heading({
   return (
     <BasicText
       is={is}
-      className={cn(className, "jnpr-heading", `jnpr-heading-${is}`)}
+      className={cn(className, "jnpr-heading", `jnpr-heading-${is}`, {
+        "jnpr-heading-secondary": !!secondary,
+      })}
       {...props}
     >
       {children}

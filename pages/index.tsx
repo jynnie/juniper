@@ -1,7 +1,5 @@
 import Head from "next/head";
-import { Flex, Text, Heading, Paragraph, Link, Codeblock } from "components";
-
-import styles from "./index.module.css";
+import { Text } from "components";
 
 export default function Home() {
   return (

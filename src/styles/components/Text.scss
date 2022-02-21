@@ -40,6 +40,11 @@
   &-h6 {
     font-size: var(--font-size-ml);
   }
+
+  &-secondary {
+    font-weight: 400;
+    color: var(--text-color);
+  }
 }
 
 .jnpr-link {
