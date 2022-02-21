@@ -10,6 +10,7 @@ export function BasicText({
   code = false,
   small = false,
   mark = false,
+  secondary = false,
   color,
   textColor,
   children,
@@ -28,6 +29,7 @@ export function BasicText({
         [`jnpr-text-small`]: small,
         [`jnpr-text-mark`]: mark,
         [`jnpr-code`]: code,
+        [`jnpr-text-secondary`]: secondary,
       })}
       color={textColor}
       {...props}

@@ -5,6 +5,7 @@ export interface BasicTextProps extends BoxProps<React.ElementType> {
   bold?: boolean;
   code?: boolean;
   small?: boolean;
+  secondary?: boolean;
   highlight?: boolean;
   color?: Color;
   textColor?: string;

@@ -95,7 +95,6 @@
   --sp: 16px;
   --sp-xxs: calc(var(--sp) * 0.125);
   --sp-xs: calc(var(--sp) * 0.25);
-  --sp-rd: calc(var(--sp) * 0.25); /* Radius */
   --sp-sm: calc(var(--sp) * 0.5);
   --sp-md: calc(var(--sp) * 0.75);
   --sp-lg: calc(var(--sp) * 1);
@@ -136,7 +135,7 @@
   --text-color2: var(--gray4);
   --text-color3: var(--gray3);
   --text-color-header: var(--text-color0);
-  --text-color-caption: var(--text-color3);
+  --text-color-caption: var(--text-color2);
   --text-color-white: var(--gray0);
   --text-color-black: var(--gray9);
 
