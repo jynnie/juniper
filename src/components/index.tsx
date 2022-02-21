@@ -12,3 +12,4 @@ export * from "./Text";
 
 // Utility Components
 export * from "./ClickOutWrapper";
+export * from "./CopyToClipboardWrapper";

@@ -15,6 +15,8 @@
 - [ ] utility CSS classes
 - [x] flex, built off box\*
 - [x] click out wrapper\*
+- [x] copy value on click wrapper\*
+- [ ] add react markdown integration
 
 🌶🌶 Good value add
 
