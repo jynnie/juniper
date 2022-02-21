@@ -8,8 +8,9 @@ import {
   Heading,
   CopyToClipboardWrapper,
 } from "components";
+import { sp } from "utils";
 
-const COLORS: { name: string; variable: string; color: string }[] = [
+const ALL_COLORS: { name: string; variable: string; color: string }[] = [
   { name: "--gray0", variable: "--gray0", color: "hsl(225, 0%, 100%)" },
   { name: "--gray1", variable: "--gray1", color: "hsl(225, 20%, 94%)" },
   { name: "--gray2", variable: "--gray2", color: "hsl(223, 19%, 85%)" },
@@ -258,6 +259,44 @@ const COLORS: { name: string; variable: string; color: string }[] = [
   },
 ];
 
+const SEMANTIC_HEADERS = ["Text", "Primary", "Success", "Warning", "Danger"];
+const SEMANTIC_COLORS: { name: string; variable: string }[] = [
+  // Text
+  { name: "Default", variable: "--text-color" },
+  { name: "Header", variable: "--text-color-header" },
+  { name: "Caption", variable: "--text-color-caption" },
+  { name: "Code", variable: "--text-color-code" },
+  { name: "Link", variable: "--text-color-link" },
+
+  // Primary
+  { name: "Lighter", variable: "--primary-lighter" },
+  { name: "Light", variable: "--primary-light" },
+  { name: "Base", variable: "--primary" },
+  { name: "Dark", variable: "--primary-dark" },
+  { name: "Darker", variable: "--primary-darker" },
+
+  // Success
+  { name: "Lighter", variable: "--success-lighter" },
+  { name: "Light", variable: "--success-light" },
+  { name: "Base", variable: "--success" },
+  { name: "Dark", variable: "--success-dark" },
+  { name: "Darker", variable: "--success-darker" },
+
+  // Warning
+  { name: "Lighter", variable: "--warning-lighter" },
+  { name: "Light", variable: "--warning-light" },
+  { name: "Base", variable: "--warning" },
+  { name: "Dark", variable: "--warning-dark" },
+  { name: "Darker", variable: "--warning-darker" },
+
+  // Danger
+  { name: "Lighter", variable: "--danger-lighter" },
+  { name: "Light", variable: "--danger-light" },
+  { name: "Base", variable: "--danger" },
+  { name: "Dark", variable: "--danger-dark" },
+  { name: "Darker", variable: "--danger-darker" },
+];
+
 export default function Color() {
   return (
     <>
@@ -270,21 +309,61 @@ export default function Color() {
         <Heading h2 secondary>
           Gallery of colors used in Juniper
         </Heading>
-        <Text>
-          These can be configured or overwritten in css. See{" "}
+        <Text p>
+          These definitions can be configured or overwritten in css. See{" "}
           <Text code>`config.scss`</Text> for example.
         </Text>
 
-        <Divider size="xxl" />
+        <Heading h2>Semantic</Heading>
+        <Text p>
+          These are some of the notable variables and how they match to colors
+          by default.
+        </Text>
+        <Flex col gap={sp("lg")}>
+          {SEMANTIC_HEADERS.map((head, i) => (
+            <Grid
+              gridTemplateColumns={`var(--sp-x6) repeat(5, 1fr)`}
+              columnGap={sp("sm")}
+              rowGap={sp("md")}
+            >
+              <Flex align="center" height={sp("x3")}>
+                <Text h6 margin={0}>
+                  {head}
+                </Text>
+              </Flex>
 
-        <Grid colNum={5} columnGap="var(--sp-sm)" rowGap="var(--sp-md)">
-          {COLORS.map((c) => (
+              {SEMANTIC_COLORS.slice(5 * i, 5 * i + 5).map((c) => (
+                <Flex col key={c.variable}>
+                  <CopyToClipboardWrapper value={`var(${c.variable})`}>
+                    <Box
+                      backgroundColor={`var(${c.variable})`}
+                      height={sp("x3")}
+                      borderRadius="var(--radius-rounded)"
+                    />
+                    <Flex justify="space-between" gap={sp("xs")}>
+                      <Text small>{c.name}</Text>
+                      <Text small secondary>
+                        {c.variable}
+                      </Text>
+                    </Flex>
+                  </CopyToClipboardWrapper>
+                </Flex>
+              ))}
+            </Grid>
+          ))}
+        </Flex>
+
+        <Divider size={sp("xxxl")} />
+
+        <Heading h2>Exhaustive</Heading>
+        <Grid colNum={5} columnGap={sp("sm")} rowGap={sp("md")}>
+          {ALL_COLORS.map((c) => (
             <Flex col key={c.variable}>
               <CopyToClipboardWrapper value={`var(${c.variable})`}>
                 <Box
                   backgroundColor={`var(${c.variable})`}
-                  height="var(--sp-x3)"
-                  borderRadius="var(--sp-rd)"
+                  height={sp("x3")}
+                  borderRadius="var(--radius-rounded)"
                 />
                 <Flex justify="space-between">
                   <Text small>{c.name}</Text>

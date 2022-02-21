@@ -13,6 +13,7 @@
 - [x] colors\*
 - [x] button\*
 - [ ] utility CSS classes
+  - [ ] colors matched to vg rarities
 - [x] flex, built off box\*
 - [x] click out wrapper\*
 - [x] copy value on click wrapper\*
