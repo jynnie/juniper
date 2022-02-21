@@ -1,17 +1,21 @@
 .main {
-  max-width: 800px;
+  max-width: 1250px;
   margin: auto;
+
+  gap: var(--sp-sm);
 }
 
 .sidenav,
 .content {
-  padding: var(--sp-lg) var(--sp-sm);
+  padding: var(--sp-xxl) var(--sp-sm) var(--sp-lg);
 }
 
 .sidenav {
-  width: var(--sp-x24);
+  width: var(--sp-x16);
+  padding-left: var(--sp-lg);
   overflow-y: auto;
 }
 
 .content {
+  flex-grow: 1;
 }
