@@ -1,0 +1,17 @@
+.main {
+  max-width: 800px;
+  margin: auto;
+}
+
+.sidenav,
+.content {
+  padding: var(--sp-lg) var(--sp-sm);
+}
+
+.sidenav {
+  width: var(--sp-x24);
+  overflow-y: auto;
+}
+
+.content {
+}

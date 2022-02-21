@@ -1,3 +1,13 @@
+🕸 Meta
+
+- [ ] switch off of storybook
+
+  - [ ] rebuild storybook pages in next.js
+  - [ ] delete storybook pages
+  - [ ] remove storybook related modules
+
+- [ ] start Figma designs for components
+
 🌶🌶🌶 Important feature or super cool
 
 - [x] colors\*
