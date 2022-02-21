@@ -1,4 +1,4 @@
-import "juniper-ui/style.css";
+import "juniper-ui/dist/style.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
