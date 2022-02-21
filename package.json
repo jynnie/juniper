@@ -22,10 +22,10 @@
     "ui-box": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
-    "@babel/preset-react": "^7.12.13",
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@storybook/addon-actions": "^6.4.19",
@@ -40,7 +40,7 @@
     "classnames": "^2.3.1",
     "css-loader": "^6.6.0",
     "immer": "^9.0.12",
-    "juniper-ui": "^0.3.2",
+    "juniper-ui": "^0.3.4",
     "next": "12.1.0",
     "rollup": "^2.67.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
