@@ -33,7 +33,7 @@
   }
 
   //* States
-  &:focus {
+  &:active {
     box-shadow: 0 0 0 var(--sp-xs) var(--main-lighter);
     outline: none;
   }
