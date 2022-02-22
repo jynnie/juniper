@@ -1,5 +1,4 @@
 import Head from "next/head";
-import jsxToString from "jsx-to-string";
 import {
   Box,
   Flex,
