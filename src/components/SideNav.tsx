@@ -7,7 +7,7 @@ import styles from "../styles/index.module.css";
 
 const NAV = [
   {
-    title: "Styleguide",
+    title: "Core",
     items: [
       { title: "Color", path: "/design/color" },
       { title: "Text", path: "/design/text" },

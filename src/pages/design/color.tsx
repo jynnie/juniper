@@ -329,7 +329,7 @@ const SEMANTIC_COLORS: {
   },
 ];
 
-export default function Color() {
+export default function ColorPage() {
   return (
     <>
       <Head>
@@ -338,7 +338,7 @@ export default function Color() {
 
       <div>
         <Heading h1>Color</Heading>
-        <Heading h2 intent="secondary">
+        <Heading h3 intent="secondary">
           Gallery of colors used in Juniper
         </Heading>
         <Text p>

@@ -1,0 +1,34 @@
+.example {
+  border: 1px solid var(--gray2);
+  border-radius: var(--radius-rounded);
+
+  overflow: hidden;
+}
+
+.preview {
+  padding: var(--sp-lg);
+}
+
+.codeToggle {
+  padding: var(--sp-md) var(--sp-lg);
+  background-color: var(--gray1);
+
+  cursor: pointer;
+}
+
+.code {
+  padding: var(--sp-lg) 0;
+  white-space: pre-wrap;
+}
+
+.copy {
+  padding: var(--sp-sm);
+  border-radius: var(--radius-rounded);
+  transition: background-color var(--transition-fast);
+}
+.copy:hover {
+  background-color: var(--gray2);
+}
+.copy:active {
+  background-color: var(--gray3);
+}
