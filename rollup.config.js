@@ -7,10 +7,10 @@ import sass from "rollup-plugin-sass";
 import packageJson from "./package.json";
 
 export default {
-  input: "./src/index.tsx",
+  input: "./package/index.tsx",
   output: [
     {
-      file: packageJson.main,
+      file: packageJson.browser,
       format: "cjs",
       sourcemap: true,
     },
@@ -28,9 +28,9 @@ export default {
     }),
     sass({
       include: [
-        "./src/styles/**/*.scss",
-        "./src/styles/**/*.sass",
-        "./src/styles/**/*.css",
+        "./package/styles/**/*.scss",
+        "./package/styles/**/*.sass",
+        "./package/styles/**/*.css",
       ],
       output: "./dist/style.css",
       failOnError: true,

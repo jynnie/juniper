@@ -354,6 +354,7 @@ export default function Color() {
         <Flex col gap={sp("lg")}>
           {SEMANTIC_COLORS.map((group, i) => (
             <Grid
+              key={i}
               gridTemplateColumns={`var(--sp-x6) repeat(5, 1fr)`}
               columnGap={sp("sm")}
               rowGap={sp("md")}

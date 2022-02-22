@@ -1,6 +1,6 @@
 // import "juniper-ui/dist/style.css";
 import "styles/index.scss";
-import styles from "./index.module.css";
+import styles from "../styles/index.module.css";
 
 import { Flex, Text, Heading, Paragraph, Link, Codeblock } from "components";
 

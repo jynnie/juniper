@@ -26,7 +26,9 @@ import "juniper-ui/dist/style.css";
 
 ## 🔨 Development
 
-Project files are in `src/`. Additionally you can test with Storybook or the Next.js pages.
+The project's UI library files are in `package/`.
+
+The project's documentation is a `Next.js` project, in the folder `src/`. You can run the below to start that up.
 
 ```bash
 yarn install
