@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
-import { Color } from "models";
+import { Color } from "../../models";
 
 type ClickEvent = React.MouseEvent<HTMLElement>;
 
 //* Button Component
 
+// TODO: Move size, intent, apeparance to types
 export interface ButtonProps {
   className?: string;
   intent?: "primary" | "secondary" | "success" | "warning" | "danger";

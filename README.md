@@ -41,6 +41,16 @@ Juniper is fully customizable from CSS only. Variables and CSS classes can be re
 
 Final `dist/` compiles to CSS.
 
+## 🖍 Props & Patterns
+
+Generally, Juniper uses the following prop types.
+
+| Prop       | Type                                                           | Description                                                                                    |
+| ---------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| intent     | `primary` \| `secondary` \| `success` \| `danger` \| `warning` | The semantic "meaning" for a user.                                                             |
+| appearance | `fill` \| `outline` \| `minimal` \| `warning`                  | Alternative styles for components. Not necesarily meant to signal different semantic meanings. |
+| color      | `gray` \| `red` \| `orange` \| `amber` \| ...                  |                                                                                                |
+
 ## ❤️ Credits
 
 This project builds on top of other components. Notably,

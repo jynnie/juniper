@@ -338,7 +338,7 @@ export default function Color() {
 
       <div>
         <Heading h1>Color</Heading>
-        <Heading h2 secondary>
+        <Heading h2 intent="secondary">
           Gallery of colors used in Juniper
         </Heading>
         <Text p>
@@ -360,7 +360,7 @@ export default function Color() {
               rowGap={sp("md")}
             >
               <Flex col justify="center" height={sp("x3")}>
-                <Text h6 margin={0}>
+                <Text is="h6" margin={0}>
                   {group.header}
                 </Text>
                 <Text>{group.caption}</Text>

@@ -5,10 +5,10 @@ export interface BasicTextProps extends BoxProps<React.ElementType> {
   bold?: boolean;
   code?: boolean;
   small?: boolean;
-  secondary?: boolean;
   highlight?: boolean;
   color?: Color;
   textColor?: string;
+  intent?: "primary" | "secondary" | "success" | "warning" | "danger";
 }
 
 export interface TextProps extends BasicTextProps {

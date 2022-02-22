@@ -1,0 +1,99 @@
+.jnpr-menu {
+  --accent: var(--primary);
+  --accent-lighter: var(--primary-lighter);
+
+  gap: var(--sp-sm);
+  justify-content: flex-start;
+
+  &Item {
+    flex-grow: 1;
+    padding: var(--sp-xs) var(--sp-md);
+
+    transition: color var(--transition-fast),
+      background-color var(--transition-fast),
+      border-color var(--transition-fast), font-weight var(--transition-faster);
+    cursor: pointer;
+
+    &-selected {
+      font-weight: 600;
+      color: var(--accent);
+    }
+  }
+
+  &-fill {
+    .jnpr-menuItem {
+      border-radius: var(--radius-rounded);
+
+      &:hover {
+        color: var(--text-color1);
+        background-color: var(--gray1);
+      }
+
+      &:active,
+      &-selected {
+        color: var(--accent);
+        background-color: var(--accent-lighter);
+      }
+    }
+  }
+
+  &-outline {
+    gap: 0;
+
+    .jnpr-menuItem {
+      border-left: 2px solid transparent;
+
+      &:hover {
+        color: var(--accent);
+        border-left-color: var(--accent);
+        background-color: var(--accent-lighter);
+      }
+
+      &:active,
+      &-selected {
+        border-left-color: var(--accent);
+      }
+    }
+  }
+
+  &-minimal {
+    .jnpr-menuItem:hover {
+      font-weight: 600;
+    }
+  }
+
+  &Group {
+    gap: var(--sp-xs);
+
+    .jnpr-menuItem {
+      padding-left: var(--sp-xl);
+    }
+
+    & &-header {
+      gap: var(--sp-sm);
+      padding-left: var(--sp-md);
+
+      cursor: pointer;
+    }
+  }
+}
+
+// TODO: Move this into a diff. file
+.jnpr-chevron {
+  &-down {
+    transform: rotate(0);
+    transition: transform var(--transition);
+  }
+  &-right {
+    transform: rotate(-90deg);
+    transition: transform var(--transition);
+  }
+  &-up {
+    transform: rotate(180deg);
+    transition: transform var(--transition);
+  }
+  &-left {
+    transform: rotate(90deg);
+    transition: transform var(--transition);
+  }
+}

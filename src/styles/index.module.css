@@ -11,13 +11,15 @@
 }
 
 .sidenav {
+  flex-shrink: 0;
   width: var(--sp-x16);
-  padding-left: var(--sp-lg);
+  padding-left: var(--sp-x4);
   overflow-y: auto;
 }
 
 .content {
   flex-grow: 1;
+  padding-right: var(--sp-x4);
 }
 
 @media only screen and (max-width: 960px) {
@@ -26,7 +28,7 @@
   }
 
   .main {
-    padding-right: var(--sp-lg);
-    padding-left: var(--sp-lg);
+    padding-right: var(--sp-x4);
+    padding-left: var(--sp-x4);
   }
 }

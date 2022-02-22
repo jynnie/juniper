@@ -67,7 +67,7 @@
   --blue-dark: hsl(204, 94%, 33%);
   --blue-darker: hsl(205, 100%, 18%);
 
-  --cobalt-lighter: hsl(229, 100%, 90%);
+  --cobalt-lighter: hsl(229, 100%, 94%);
   --cobalt-light: hsl(229, 100%, 74%);
   --cobalt: hsl(229, 100%, 66%);
   --cobalt-dark: hsl(229, 67%, 40%);
@@ -180,6 +180,7 @@
   --danger-darker: var(--red-darker);
 
   /* For interactables */
+  --transition-faster: 0.1s;
   --transition-fast: 0.2s;
   /* For system messages */
   --transition: 0.4s;

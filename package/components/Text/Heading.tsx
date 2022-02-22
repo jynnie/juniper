@@ -13,7 +13,7 @@ export function Heading({
   h4 = false,
   h5 = false,
   h6 = false,
-  secondary = false,
+  intent,
   children,
   ...props
 }: HeadingProps) {
@@ -29,7 +29,7 @@ export function Heading({
     <BasicText
       is={is}
       className={cn(className, "jnpr-heading", `jnpr-heading-${is}`, {
-        "jnpr-heading-secondary": !!secondary,
+        [`jnpr-heading-${intent}`]: !!intent,
       })}
       {...props}
     >

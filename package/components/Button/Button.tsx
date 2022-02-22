@@ -1,9 +1,10 @@
 import React from "react";
-import useButton from "./useButton";
 import { Loader } from "react-feather";
+
+import useButton from "./useButton";
 import { ButtonProps } from "./Button.model";
 
-import Flex from "components/primitives/Flex";
+import Flex from "../primitives/Flex";
 
 export function Button({
   className,
@@ -21,7 +22,11 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const { props: buttonProps, icon, isLoading } = useButton({
+  const {
+    props: buttonProps,
+    icon,
+    isLoading,
+  } = useButton({
     className,
     intent,
     appearance,

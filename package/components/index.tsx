@@ -10,6 +10,9 @@ export * from "./primitives/Divider";
 export * from "./Button";
 export * from "./Text";
 
+// Navigation Components
+export * from "./Menu";
+
 // Utility Components
 export * from "./ClickOutWrapper";
 export * from "./CopyToClipboardWrapper";
