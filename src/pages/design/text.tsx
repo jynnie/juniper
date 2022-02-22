@@ -45,7 +45,7 @@ export default function TextPage() {
             <Heading>Juniper</Heading>
             <Paragraph>
               <Link href="https://github.com/jynnie/juniper">Juniper</Link> is a
-              React component library made by <Text mark>jynnie</Text>. It's
+              React component library made by <Text mark>jynnie</Text>. It{"'"}s
               goal is to provide powerful components built on{" "}
               <Text bold>pure CSS variables</Text>, to give both power, but
               customizability.

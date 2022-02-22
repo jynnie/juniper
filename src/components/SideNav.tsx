@@ -20,7 +20,7 @@ export function SideNav() {
 
   return (
     <div className={styles.sidenav}>
-      <Link href="/">
+      <Link href="/" passHref>
         <Text h3 cursor="pointer">
           Juniper UI
         </Text>
@@ -30,7 +30,7 @@ export function SideNav() {
         {NAV.map((group) => (
           <Menu.Group key={group.title} title={group.title}>
             {group.items.map((item) => (
-              <Link key={item.title} href={item.path}>
+              <Link key={item.title} href={item.path} passHref>
                 <Menu.Item selected={router.pathname === item.path}>
                   <Text>{item.title}</Text>
                 </Menu.Item>
