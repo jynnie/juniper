@@ -5,6 +5,7 @@
     "start": "next dev",
     "dev": "next dev",
     "build": "rollup -c",
+    "next": "next build",
     "publish": "yarn build && npm publish"
   },
   "dependencies": {
