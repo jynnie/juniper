@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Box, { BoxProps } from "ui-box";
 import cn from "classnames";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import codeStyle from "react-syntax-highlighter/dist/cjs/styles/prism/coy";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { coy as codeStyle } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { ChevronDown, Clipboard } from "react-feather";
 
 import style from "../styles/example.module.css";

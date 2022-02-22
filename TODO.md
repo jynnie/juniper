@@ -7,6 +7,7 @@
   - [x] remove storybook related modules
 
 - [ ] start Figma designs for components
+- [ ] switch to rem for font-sizes
 
 🌶🌶🌶 Important feature or super cool
 
