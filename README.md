@@ -1,4 +1,4 @@
-# 🌿 Juniper 🍇
+# 🌿 Juniper 🫐
 
 A React component library.
 
