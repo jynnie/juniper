@@ -1,5 +1,5 @@
 import type { BoxProps } from "ui-box";
-import { Color } from "models";
+import { Color, Intent } from "models";
 
 export interface BasicTextProps extends BoxProps<React.ElementType> {
   bold?: boolean;
@@ -8,7 +8,7 @@ export interface BasicTextProps extends BoxProps<React.ElementType> {
   highlight?: boolean;
   color?: Color;
   textColor?: string;
-  intent?: "primary" | "secondary" | "success" | "warning" | "danger";
+  intent?: Intent;
 }
 
 export interface TextProps extends BasicTextProps {

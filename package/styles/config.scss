@@ -91,29 +91,65 @@
   --pink-dark: hsl(335, 78%, 42%);
   --pink-darker: hsl(337, 65%, 26%);
 
-  /* Space System */
+  //* Space System
   --sp: 16px;
   --sp-xxs: calc(var(--sp) * 0.125);
+  --sp-2: calc(var(--sp) * 0.125);
+
   --sp-xs: calc(var(--sp) * 0.25);
+  --sp-4: calc(var(--sp) * 0.25);
+
   --sp-sm: calc(var(--sp) * 0.5);
+  --sp-8: calc(var(--sp) * 0.5);
+
   --sp-md: calc(var(--sp) * 0.75);
+  --sp-12: calc(var(--sp) * 0.75);
+
   --sp-lg: calc(var(--sp) * 1);
+  --sp-16: calc(var(--sp) * 1);
+
   --sp-xl: calc(var(--sp) * 1.5);
+  --sp-24: calc(var(--sp) * 1.5);
+
   --sp-x2: var(--sp-xxl);
   --sp-xxl: calc(var(--sp) * 2);
+  --sp-48: var(--sp-xxl);
+
   --sp-x2p5: calc(var(--sp) * 2.5); /* Special case for 40px */
+  --sp-40: calc(var(--sp) * 2.5);
+
   --sp-x3: calc(var(--sp) * 3);
   --sp-xxxl: var(--sp-x3);
-  --sp-x4: calc(var(--sp) * 4);
-  --sp-x6: calc(var(--sp) * 6);
-  --sp-x8: calc(var(--sp) * 8);
-  --sp-x12: calc(var(--sp) * 12);
-  --sp-x16: calc(var(--sp) * 16);
-  --sp-x24: calc(var(--sp) * 24);
-  --sp-x32: calc(var(--sp) * 32);
-  --sp-x40: calc(var(--sp) * 40);
-  --sp-x48: calc(var(--sp) * 48);
+  --sp-48: var(--sp-x3);
 
+  --sp-x4: calc(var(--sp) * 4);
+  --sp-64: calc(var(--sp) * 4);
+
+  --sp-x6: calc(var(--sp) * 6);
+  --sp-96: calc(var(--sp) * 6);
+
+  --sp-x8: calc(var(--sp) * 8);
+  --sp-128: calc(var(--sp) * 8);
+
+  --sp-x12: calc(var(--sp) * 12);
+  --sp-192: calc(var(--sp) * 12);
+
+  --sp-x16: calc(var(--sp) * 16);
+  --sp-256: calc(var(--sp) * 16);
+
+  --sp-x24: calc(var(--sp) * 24);
+  --sp-384: calc(var(--sp) * 24);
+
+  --sp-x32: calc(var(--sp) * 32);
+  --sp-512: calc(var(--sp) * 32);
+
+  --sp-x40: calc(var(--sp) * 40);
+  --sp-640: calc(var(--sp) * 40);
+
+  --sp-x48: calc(var(--sp) * 48);
+  --sp-768: calc(var(--sp) * 48);
+
+  //* Font sizes
   --font-size: 14px;
   --font-size-sm: 0.8rem;
   --font-size-md: var(--font-size);
@@ -127,7 +163,7 @@
   --font-size-x4: 3rem;
 }
 
-/* Semantic definitions */
+//* Semantic definitions
 :root {
   --background: var(--gray0);
 

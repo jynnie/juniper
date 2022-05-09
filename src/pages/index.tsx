@@ -10,9 +10,7 @@ export default function Home() {
 
       <div>
         <Text h1>Juniper UI</Text>
-        <Text bold caption>
-          Currently In Development
-        </Text>
+        <Text bold>Currently In Development</Text>
         <Text p>
           A React UI component library focused on powerful components with
           simple styling; and ease of customization with CSS variables.

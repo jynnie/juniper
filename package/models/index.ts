@@ -11,3 +11,5 @@ export type Color =
   | "cobalt"
   | "purple"
   | "pink";
+
+export type Intent = "primary" | "secondary" | "success" | "warning" | "danger";

@@ -1,20 +1,22 @@
 {
   "newcomponent": {
-    "prefix": "newcomponent",
+    "prefix": "new component",
     "body": [
       "import React from 'react';",
-      "import Box from 'ui-box';",
+      "import Box, { BoxProps } from 'ui-box';",
       "import cn from 'classnames';",
       "",
-      "export function ${1:$TM_FILENAME_BASE}({className, children, ...props}) {",
+      "interface ${1:$TM_FILENAME_BASE}Props extends BoxProps<'div'> {",
+      "  className?: string",
+      "}",
+      "",
+      "export function ${1:$TM_FILENAME_BASE}({className, children, ...props}: ${1:$TM_FILENAME_BASE}Props) {",
       "  return (",
       "    <Box className={cn(className, 'jnpr')} {...props}>",
       "      {children}",
       "    </Box>",
       "  );",
       "};",
-      "",
-      "export default ${1:$TM_FILENAME_BASE}"
     ],
     "description": "Basic styled component"
   },
@@ -29,7 +31,7 @@
     "description": "Wraps the currently selected text in a Box"
   },
   "newpage": {
-    "prefix": "newpage",
+    "prefix": "new page",
     "description": "New documentation page",
     "body": [
       "import Head from 'next/head';",
