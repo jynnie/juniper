@@ -11,8 +11,25 @@ const NAV = [
     items: [
       { title: "Color", path: "/design/color" },
       { title: "Text", path: "/design/text" },
+      { title: "Button", path: "/design/button" },
+      { title: "Menu", path: "/design/menu" },
+      // { title: "Custom Buttons", path: "/design/button/custom" },
     ],
   },
+  {
+    title: "Primitives",
+    items: [
+      { title: "Flex", path: "/primitives/flex" },
+      { title: "Grid", path: "/primitives/grid" },
+    ],
+  },
+  {
+    title: "Helpers",
+    items: [
+      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
+      {title: "Click Out", path: "/helpers/click-out"},
+    ]
+  }
 ];
 
 export function SideNav() {

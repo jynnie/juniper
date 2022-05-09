@@ -12,7 +12,7 @@ import { sp } from "../../package/utils";
 interface ExampleProps extends BoxProps<React.ElementType> {
   name?: string;
   code?: string;
-  description?: string;
+  description?: string | React.ReactElement;
 }
 
 export function Example({

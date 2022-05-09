@@ -33,7 +33,7 @@
   }
 
   //* States
-  &:active {
+  &:active:not(.disabled) {
     box-shadow: 0 0 0 var(--sp-xs) var(--main-lighter);
     outline: none;
   }
@@ -69,11 +69,11 @@
     color: var(--text-color-white);
     border: 1px solid var(--main);
     background-color: var(--main);
-    &:hover {
+    &:hover:not(.disabled) {
       background-color: var(--main-light);
       border-color: var(--main-light);
     }
-    &:active,
+    &:active:not(.disabled),
     &.active {
       background-color: var(--main-dark);
       border-color: var(--main-dark);
@@ -84,10 +84,10 @@
     border: 1px solid var(--main);
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(.disabled) {
       background-color: transparent;
     }
-    &:active,
+    &:active:not(.disabled),
     &.active {
       color: var(--main-dark);
       border-color: var(--main-dark);
@@ -99,11 +99,11 @@
     border: 1px solid transparent;
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(.disabled) {
       background-color: var(--gray1);
       border-color: transparent;
     }
-    &:active,
+    &:active:not(.disabled),
     &.active {
       color: var(--main-dark);
       border-color: transparent;
@@ -117,12 +117,12 @@
     border: 1px solid var(--gray3);
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(.disabled) {
       background-color: transparent;
       border-color: var(--gray7);
       color: var(--gray7);
     }
-    &:active,
+    &:active:not(.disabled),
     &.active {
       background-color: var(--gray1);
       border-color: var(--gray9);
