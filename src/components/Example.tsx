@@ -31,33 +31,35 @@ export function Example({
       {!!description && <Text p>{description}</Text>}
       <Box className={style.example}>
         <Box className={style.preview}>{children}</Box>
-        <Flex
-          className={style.codeToggle}
-          align="center"
-          justify="space-between"
-        >
+        {!!code && (
           <Flex
+            className={style.codeToggle}
             align="center"
-            gap={sp("lg")}
-            flexGrow={1}
-            onClick={() => setShowCode(!showCode)}
+            justify="space-between"
           >
-            <ChevronDown
-              className={cn(`jnpr-chevron-${showCode ? "down" : "right"}`)}
-              size="var(--sp-lg)"
-            />
-            <Text h5 intent="secondary" margin={0}>
-              Code
-            </Text>
-          </Flex>
-
-          <CopyToClipboardWrapper value={code}>
-            <Flex className={style.copy} center>
-              <Clipboard size={"var(--font-size-ml)"} />
+            <Flex
+              align="center"
+              gap={sp("lg")}
+              flexGrow={1}
+              onClick={() => setShowCode(!showCode)}
+            >
+              <ChevronDown
+                className={cn(`jnpr-chevron-${showCode ? "down" : "right"}`)}
+                size="var(--sp-lg)"
+              />
+              <Text h5 intent="secondary" margin={0}>
+                Code
+              </Text>
             </Flex>
-          </CopyToClipboardWrapper>
-        </Flex>
-        {showCode && (
+
+            <CopyToClipboardWrapper value={code}>
+              <Flex className={style.copy} center>
+                <Clipboard size={"var(--font-size-ml)"} />
+              </Flex>
+            </CopyToClipboardWrapper>
+          </Flex>
+        )}
+        {!!code && showCode && (
           <SyntaxHighlighter
             className={style.code}
             language="jsx"

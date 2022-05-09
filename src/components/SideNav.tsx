@@ -31,8 +31,8 @@ const NAV = [
   {
     title: "Helpers",
     items: [
-      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
       {title: "Click Out", path: "/helpers/click-out"},
+      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
     ]
   }
 ];
