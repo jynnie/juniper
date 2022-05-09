@@ -115,16 +115,16 @@
   --sp-x48: calc(var(--sp) * 48);
 
   --font-size: 14px;
-  --font-size-sm: 12px;
+  --font-size-sm: 0.8rem;
   --font-size-md: var(--font-size);
-  --font-size-ml: 16px; /* Special size in between md/lg */
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-x2: 24px;
+  --font-size-ml: 1.15rem; /* Special size in between md/lg */
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-x2: 1.75rem;
   --font-size-xxl: var(--font-size-x2);
-  --font-size-x3: 30px;
+  --font-size-x3: 2.15rem;
   --font-size-xxxl: var(--font-size-x3);
-  --font-size-x4: 36px;
+  --font-size-x4: 3rem;
 }
 
 /* Semantic definitions */

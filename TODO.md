@@ -1,13 +1,13 @@
 🕸 Meta
 
-- [ ] switch off of storybook
+- [x] switch off of storybook
 
-  - [ ] rebuild storybook pages in next.js
-  - [ ] delete storybook pages
+  - [x] rebuild storybook pages in next.js
+  - [x] delete storybook pages
   - [x] remove storybook related modules
 
 - [ ] start Figma designs for components
-- [ ] switch to rem for font-sizes
+- [x] switch to rem for font-sizes
 
 🌶🌶🌶 Important feature or super cool
 
