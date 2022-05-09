@@ -7,12 +7,17 @@ import styles from "../styles/index.module.css";
 
 const NAV = [
   {
+    title: "Styleguide",
+    items: [
+      { title: "Color", path: "/styleguide/color" },
+    ],
+  },
+  {
     title: "Core",
     items: [
-      { title: "Color", path: "/design/color" },
-      { title: "Text", path: "/design/text" },
-      { title: "Button", path: "/design/button" },
-      { title: "Menu", path: "/design/menu" },
+      { title: "Text", path: "/core/text" },
+      { title: "Button", path: "/core/button" },
+      { title: "Menu", path: "/core/menu" },
       // { title: "Custom Buttons", path: "/design/button/custom" },
     ],
   },

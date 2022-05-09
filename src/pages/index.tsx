@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>🌿🫐 | Juniper</title>
+        <title>🌿🫐 Juniper</title>
       </Head>
 
       <div>

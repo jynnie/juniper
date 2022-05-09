@@ -18,7 +18,7 @@ export default function TextPage() {
   return (
     <>
       <Head>
-        <title>🌿🫐 | Text</title>
+        <title>Text | 🌿🫐</title>
       </Head>
 
       <div>

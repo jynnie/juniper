@@ -9,7 +9,7 @@ export default function ButtonPage() {
   return (
     <>
       <Head>
-        <title>🌿🫐 | Button</title>
+        <title>Button | 🌿🫐</title>
       </Head>
 
       <div>

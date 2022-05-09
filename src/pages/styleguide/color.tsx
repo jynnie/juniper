@@ -333,7 +333,7 @@ export default function ColorPage() {
   return (
     <>
       <Head>
-        <title>🌿🫐 | Color</title>
+        <title>Color | 🌿🫐</title>
       </Head>
 
       <div>
