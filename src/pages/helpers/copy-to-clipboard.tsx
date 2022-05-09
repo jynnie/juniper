@@ -1,18 +1,14 @@
 import Head from "next/head";
 import {
-  Box,
   Flex,
   Text,
   Heading,
-  ClickOutWrapper,
-  useClickOut,
   CopyToClipboardWrapper,
   Button,
 } from "components";
 import { sp } from "utils";
 
 import { Example } from "../../components/Example";
-import { useState } from "react";
 import { Clipboard } from "react-feather";
 
 export default function CopyToClipboardPage() {

@@ -27,5 +27,37 @@
     "prefix": "box",
     "body": ["<${1:Box}>${TM_SELECTED_TEXT}</${1:Box}>"],
     "description": "Wraps the currently selected text in a Box"
+  },
+  "newpage": {
+    "prefix": "newpage",
+    "description": "New documentation page",
+    "body": [
+      "import Head from 'next/head';",
+      "import { Box, Flex, Text, Heading, Button } from 'components';",
+      "import { sp } from 'utils';",
+      "",
+      "import { Example } from '../../components/Example';",
+      "",
+      "export default function ${1:$TM_FILENAME_BASE}Page() {",
+      "  return (",
+      "    <>",
+      "      <Head>",
+      "        <title>${2:$TM_FILENAME_BASE} | 🌿🫐</title>",
+      "      </Head>",
+      "",
+      "      <div>",
+      "        <Heading h1>${2:$TM_FILENAME_BASE}</Heading>",
+      "        <Heading h3 intent='secondary'>",
+      "          ${3:Description}",
+      "        </Heading>",
+
+      "        <Flex col gap={sp('xxl')}>",
+      "          <Example code={``}></Example>",
+      "        </Flex>",
+      "      </div>",
+      "    </>",
+      "  );",
+      "}",
+    ]
   }
 }

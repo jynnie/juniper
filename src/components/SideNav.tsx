@@ -22,19 +22,19 @@ const NAV = [
     ],
   },
   {
+    title: "Helpers",
+    items: [
+      {title: "Click Out", path: "/helpers/click-out"},
+      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
+    ]
+  },
+  {
     title: "Primitives",
     items: [
       { title: "Flex", path: "/primitives/flex" },
       { title: "Grid", path: "/primitives/grid" },
     ],
   },
-  {
-    title: "Helpers",
-    items: [
-      {title: "Click Out", path: "/helpers/click-out"},
-      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
-    ]
-  }
 ];
 
 export function SideNav() {
