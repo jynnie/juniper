@@ -19,7 +19,6 @@
 - [x] click out wrapper\*
 - [x] copy value on click wrapper\*
 - [ ] add react-markdown integration
-- [ ] add react-markdown integration
 
 🌶🌶 Good value add
 

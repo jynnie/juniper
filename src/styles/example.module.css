@@ -1,3 +1,6 @@
+.exampleContainer {
+}
+
 .example {
   border: 1px solid var(--gray2);
   border-radius: var(--radius-rounded);
