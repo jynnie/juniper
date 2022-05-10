@@ -38,6 +38,7 @@ export function Example({
             justify="space-between"
           >
             <Flex
+              className={style.toggleTarget}
               align="center"
               gap={sp("lg")}
               flexGrow={1}

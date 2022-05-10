@@ -13,10 +13,12 @@
 }
 
 .codeToggle {
-  padding: var(--sp-md) var(--sp-lg);
   background-color: var(--gray1);
+}
 
+.toggleTarget {
   cursor: pointer;
+  padding: var(--sp-md) var(--sp-lg);
 }
 
 .code {
@@ -25,9 +27,11 @@
 }
 
 .copy {
+  margin: var(--sp-md) var(--sp-lg);
   padding: var(--sp-sm);
   border-radius: var(--radius-rounded);
   transition: background-color var(--transition-fast);
+  cursor: pointer;
 }
 .copy:hover {
   background-color: var(--gray2);
