@@ -1,13 +1,6 @@
 🕸 Meta
 
-- [x] switch off of storybook
-
-  - [x] rebuild storybook pages in next.js
-  - [x] delete storybook pages
-  - [x] remove storybook related modules
-
 - [ ] start Figma designs for components
-- [x] switch to rem for font-sizes
 
 🌶🌶🌶 Important feature or super cool
 
@@ -35,7 +28,7 @@
 - [ ] error\*
 - [ ] popover
 - [ ] copy text in field
-- [ ] toast\*
+- [x] toast\*
 - [ ] card\*
 
 🌶 Should have, but either low impact or high effort

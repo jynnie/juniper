@@ -5,8 +5,8 @@ import { Intent } from "../../models";
 import { ToastContainer } from "./ToastContainer";
 import Toast from "./Toast";
 
-interface Toast {
-  text: string;
+// TODO: Pass in more options?
+interface ToastOptions {
   intent?: Intent;
 }
 
@@ -29,6 +29,7 @@ export function useToasts() {
   }, []);
 
   function handleMessageToast(message: string) {
+    // TODO: Should we clean up these divs?
     // Need to add a new parent node to ensure not overwriting
     const parentNode = document.createElement("div");
     toastsRef.current?.appendChild(parentNode);
