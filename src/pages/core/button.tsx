@@ -15,7 +15,7 @@ export default function ButtonPage() {
       <div>
         <Heading h1>Button</Heading>
         <Heading h3 intent="secondary">
-          Use to trigger an operation.
+          Use to trigger an operation
         </Heading>
 
         <Flex col gap={sp("xxl")}>

@@ -14,7 +14,7 @@ export default function MenuPage() {
       <div>
         <Heading h1>Menu</Heading>
         <Heading h3 intent="secondary">
-          Navigation and dropdown menus.
+          Navigation and dropdown menus
         </Heading>
 
         <Flex col gap={sp("xxl")}>

@@ -22,7 +22,7 @@ export default function ClickOutPage() {
       <div>
         <Heading h1>Click Out</Heading>
         <Heading h3 intent="secondary">
-          Trigger operations when clicking outside.
+          Trigger operations when clicking outside
         </Heading>
 
         <Flex col gap={sp("xxl")}>

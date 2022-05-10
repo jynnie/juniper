@@ -9,6 +9,7 @@ export * from "./primitives/Divider";
 // Core Components
 export * from "./Button";
 export * from "./Text";
+export * from "./Toast";
 
 // Navigation Components
 export * from "./Menu";

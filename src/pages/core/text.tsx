@@ -1,15 +1,5 @@
 import Head from "next/head";
-import {
-  Box,
-  Flex,
-  Divider,
-  Grid,
-  Text,
-  Heading,
-  Paragraph,
-  Link,
-  Codeblock,
-} from "components";
+import { Flex, Text, Heading, Paragraph, Link, Codeblock } from "components";
 import { sp } from "utils";
 
 import { Example } from "../../components/Example";
@@ -24,7 +14,7 @@ export default function TextPage() {
       <div>
         <Heading h1>Text</Heading>
         <Heading h3 intent="secondary">
-          Display text using defined typographic styles.
+          Display text using defined typographic styles
         </Heading>
 
         <Flex col gap={sp("xxl")}>

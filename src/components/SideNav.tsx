@@ -8,9 +8,7 @@ import styles from "../styles/index.module.css";
 const NAV = [
   {
     title: "Styleguide",
-    items: [
-      { title: "Color", path: "/styleguide/color" },
-    ],
+    items: [{ title: "Color", path: "/styleguide/color" }],
   },
   {
     title: "Core",
@@ -18,15 +16,16 @@ const NAV = [
       { title: "Text", path: "/core/text" },
       { title: "Button", path: "/core/button" },
       { title: "Menu", path: "/core/menu" },
+      { title: "Toast", path: "/core/toast" },
       // { title: "Custom Buttons", path: "/design/button/custom" },
     ],
   },
   {
     title: "Helpers",
     items: [
-      {title: "Click Out", path: "/helpers/click-out"},
-      {title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard"},
-    ]
+      { title: "Click Out", path: "/helpers/click-out" },
+      { title: "Copy To Clipboard", path: "/helpers/copy-to-clipboard" },
+    ],
   },
   {
     title: "Primitives",
