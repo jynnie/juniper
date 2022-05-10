@@ -45,7 +45,6 @@ export function Example({
             >
               <ChevronDown
                 className={cn(`jnpr-chevron-${showCode ? "down" : "right"}`)}
-                size="var(--sp-lg)"
               />
               <Text h5 intent="secondary" margin={0}>
                 Code
@@ -54,7 +53,7 @@ export function Example({
 
             <CopyToClipboardWrapper value={code}>
               <Flex className={style.copy} center>
-                <Clipboard size={"var(--font-size-ml)"} />
+                <Clipboard />
               </Flex>
             </CopyToClipboardWrapper>
           </Flex>

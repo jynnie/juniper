@@ -52,7 +52,6 @@ function MenuGroup({
         <Text>{title}</Text>
         <ChevronDown
           className={cn(`jnpr-chevron-${showGroup ? "down" : "right"}`)}
-          size="var(--sp-lg)"
         />
       </Flex>
 
