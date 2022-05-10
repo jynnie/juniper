@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import cn from "classnames";
 
 import { Text, Menu } from "components";
+import { Menu as MenuIcon, X } from "react-feather";
 
 import styles from "../styles/index.module.css";
+import { useState } from "react";
 
 const NAV = [
   {
@@ -38,28 +41,38 @@ const NAV = [
 
 export function SideNav() {
   const router = useRouter();
+  const [isShow, setIsShow] = useState(false);
 
   return (
-    <div className={styles.sidenav}>
-      <Link href="/" passHref>
-        <Text h3 cursor="pointer">
-          Juniper UI
-        </Text>
-      </Link>
+    <>
+      <div
+        className={cn(styles.mobileMenuButton, "u-pointer")}
+        onClick={() => setIsShow((s) => !s)}
+      >
+        {!isShow ? <MenuIcon /> : <X />}
+      </div>
 
-      <Menu appearance="fill">
-        {NAV.map((group) => (
-          <Menu.Group key={group.title} title={group.title}>
-            {group.items.map((item) => (
-              <Link key={item.title} href={item.path} passHref>
-                <Menu.Item selected={router.pathname === item.path}>
-                  <Text>{item.title}</Text>
-                </Menu.Item>
-              </Link>
-            ))}
-          </Menu.Group>
-        ))}
-      </Menu>
-    </div>
+      <div className={cn(styles.sidenav, { [styles.show]: isShow })}>
+        <Link href="/" passHref>
+          <Text h3 cursor="pointer">
+            Juniper UI
+          </Text>
+        </Link>
+
+        <Menu appearance="fill">
+          {NAV.map((group) => (
+            <Menu.Group key={group.title} title={group.title}>
+              {group.items.map((item) => (
+                <Link key={item.title} href={item.path} passHref>
+                  <Menu.Item selected={router.pathname === item.path}>
+                    <Text>{item.title}</Text>
+                  </Menu.Item>
+                </Link>
+              ))}
+            </Menu.Group>
+          ))}
+        </Menu>
+      </div>
+    </>
   );
 }

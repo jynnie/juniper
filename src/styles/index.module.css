@@ -22,9 +22,33 @@
   padding-right: var(--sp-x4);
 }
 
+.mobileMenuButton {
+  display: none;
+}
+
 @media only screen and (max-width: 960px) {
   .sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background);
+    z-index: 1;
+    width: 100%;
+    padding-right: var(--sp-x4);
+  }
+
+  .sidenav:not(.show) {
     display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    position: fixed;
+    top: var(--sp-24);
+    right: var(--sp-48);
+    z-index: 9;
   }
 
   .main {
