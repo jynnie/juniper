@@ -1,14 +1,11 @@
 import React from "react";
-import { Box, Flex, Button } from "components";
+import { Box, Flex, Button, CopyToClipboardWrapper, Text } from "components";
+import Toast from "components/Toast/Toast";
 
 export default function Playground() {
   return (
     <div>
-      <Button
-        onClick={() => new Promise((resolve) => setTimeout(resolve, 2400))}
-      >
-        Click Me
-      </Button>
+      <CopyToClipboardWrapper value="text">Test</CopyToClipboardWrapper>
     </div>
   );
 }

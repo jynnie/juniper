@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useToasts } from "components/Toast/useToasts";
+import React from "react";
 import Box, { BoxProps } from "ui-box";
 
 interface CopyToClipboardWrapperProps extends BoxProps<React.ElementType> {
@@ -13,15 +14,11 @@ export function CopyToClipboardWrapper({
   ...props
 }: CopyToClipboardWrapperProps): React.ReactElement {
   // TODO: Add notification
-  const [showTip, setShowTip] = useState(false);
+  const toast = useToasts();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(value);
-    setShowTip(true);
-
-    setTimeout(() => {
-      setShowTip(false);
-    }, 2000);
+    toast.add("Copied to clipboard!");
   };
 
   const handleStopPropagation = (e: Event) => {
@@ -50,7 +47,6 @@ export function CopyToClipboardWrapper({
       cursor="pointer"
       {...props}
     >
-      {/* {showTip && <Tip className="successTip">{successText}</Tip>} */}
       {children}
     </Box>
   );

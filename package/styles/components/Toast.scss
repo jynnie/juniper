@@ -1,0 +1,41 @@
+.jnpr-toast {
+  display: flex;
+  justify-content: space-between;
+
+  width: var(--sp-384);
+  padding: var(--sp-16);
+
+  border-radius: var(--radius-rounded);
+  box-shadow: 0 calc(var(--sp-12) / 2) var(--sp-12) var(--gray-light);
+  animation: jnpr-toast-popup 0.2s 1 forwards;
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-8);
+
+    position: fixed;
+    z-index: 999999999;
+    bottom: var(--sp-16);
+    right: var(--sp-16);
+  }
+
+  &-text {
+    margin-right: var(--sp-8);
+  }
+
+  &-x {
+    cursor: pointer;
+  }
+}
+
+@keyframes jnpr-toast-popup {
+  from {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
