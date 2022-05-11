@@ -1,0 +1,107 @@
+.jnpr-select {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid var(--gray);
+  border-radius: var(--radius-rounded);
+  transition: box-shadow var(--transition-fast);
+  padding-right: var(--sp-8);
+
+  //* Subcomponents
+  input {
+    flex-grow: 1;
+    padding: var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-12);
+    font-size: var(--font-size-ml);
+    font-family: var(--font);
+
+    outline: none;
+    border: none;
+    background: none;
+
+    &::placeholder {
+      color: var(--text-color);
+    }
+  }
+
+  .jnpr-select-iconButton {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+  }
+  &:not(.disabled) .jnpr-select-iconButton {
+    cursor: pointer;
+  }
+
+  .jnpr-select-chevronIcon {
+    transition: transform var(--transition-faster);
+  }
+
+  &-optionContainer {
+    display: none;
+    flex-direction: column;
+    gap: var(--sp-4);
+
+    background: var(--gray0);
+    padding: var(--sp-sm);
+    border: 1px solid var(--gray3);
+    border-radius: var(--radius-rounded);
+    box-shadow: 0 var(--sp-4) var(--sp-8) var(--gray3);
+
+    &:hover {
+      display: flex;
+    }
+    &.visible {
+      display: flex;
+    }
+  }
+
+  &-singleOption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--sp-sm);
+    padding-right: var(--sp-md);
+    border-radius: var(--radius-rounded);
+    transition: background var(--transition-fast);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--gray1);
+    }
+    &.selected {
+      font-weight: bold;
+    }
+  }
+
+  //* States
+  &:active:not(.disabled) {
+    box-shadow: 0 0 0 var(--sp-xs) var(--gray-lighter);
+    outline: none;
+
+    .jnpr-select-chevronIcon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:focus-within:not(.disabled) {
+    box-shadow: 0 0 0 var(--sp-xs) var(--gray-lighter);
+    outline: none;
+
+    .jnpr-select-chevronIcon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background-color: var(--gray1);
+    border-color: var(--gray2);
+    color: var(--gray3);
+
+    input {
+      cursor: not-allowed;
+    }
+  }
+}

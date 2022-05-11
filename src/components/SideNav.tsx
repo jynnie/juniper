@@ -20,6 +20,7 @@ const NAV = [
       { title: "Button", path: "/core/button" },
       { title: "Menu", path: "/core/menu" },
       { title: "Toast", path: "/core/toast" },
+      { title: "Select", path: "/core/select" },
       // { title: "Custom Buttons", path: "/design/button/custom" },
     ],
   },

@@ -21,6 +21,6 @@ export type SIZE =
   | "x40"
   | "x48";
 
-export function sp(size: SIZE): string {
+export function sp(size: SIZE | number): string {
   return `var(--sp-${size})`;
 }
