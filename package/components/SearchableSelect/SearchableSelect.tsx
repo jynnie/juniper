@@ -14,7 +14,7 @@ export interface Option {
   label: string;
 }
 
-interface ComboboxProps {
+interface SearchableSelectProps {
   className?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -56,13 +56,7 @@ function usePopper() {
   return { setReferenceElement, setPopperElement, styles, attributes };
 }
 
-// TODO: Decide name Combobox or Autocomplete or Search
-// It's very common that this kind of pattern is called
-// a "select", even though technically, it has a
-// different kind of implementation/UX than the
-// traditional select... I'm not sure if it's worth
-// calling it by what it "technically" is.
-export function Combobox({
+export function SearchableSelect({
   className,
   placeholder,
   disabled,
@@ -70,7 +64,7 @@ export function Combobox({
   value,
   onChange,
   isClearable,
-}: ComboboxProps) {
+}: SearchableSelectProps) {
   const { setReferenceElement, setPopperElement, styles, attributes } =
     usePopper();
   const inputRef = useRef<HTMLInputElement>();

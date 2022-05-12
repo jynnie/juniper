@@ -20,8 +20,15 @@ const NAV = [
       { title: "Button", path: "/core/button" },
       { title: "Menu", path: "/core/menu" },
       { title: "Toast", path: "/core/toast" },
-      { title: "[WIP] Combobox", path: "/core/combobox" },
-      // { title: "Custom Buttons", path: "/design/button/custom" },
+    ],
+  },
+  {
+    title: "Data Entry",
+    items: [
+      {
+        title: "[WIP] Searchable Select",
+        path: "/data-entry/searchable-select",
+      },
     ],
   },
   {
@@ -38,6 +45,12 @@ const NAV = [
       { title: "Grid", path: "/primitives/grid" },
     ],
   },
+  // {
+  //   title: "Customize",
+  //   items: [
+  //      { title: "Custom Buttons", path: "/design/button/custom" },
+  //   ]
+  // }
 ];
 
 export function SideNav() {
