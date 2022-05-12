@@ -17,7 +17,9 @@
 
 - [x] text\*
 - [x] link\*
-- [ ] dropdown/autocomplete w/ search, using react-select\*
+- [ ] combobox (autocomplete select)\*
+- [ ] basic select\*
+- [ ] multiselect
 - [ ] tables w/ useTable
 - [ ] ellipsis support
 - [ ] editable text

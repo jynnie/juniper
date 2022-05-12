@@ -3,7 +3,7 @@ import { Box, Flex, Text, Heading, Button } from "components";
 import { sp } from "utils";
 
 import { Example } from "../../components/Example";
-import { Select } from "components/Select/Select";
+import { Combobox } from "components/Combobox/Combobox";
 import { useState } from "react";
 
 const EXAMPLE_OPTIONS = [
@@ -18,16 +18,15 @@ export default function SelectPage() {
   return (
     <>
       <Head>
-        <title>Select | 🌿🫐</title>
+        <title>Combobox | 🌿🫐</title>
       </Head>
 
       <div>
-        <Heading h1>Select</Heading>
+        <Heading h1>[WIP] Combobox</Heading>
         <Heading h3 intent="secondary">
-          Filter {"&"} select options from large lists
+          Auto-complete {"&"} select options from large lists
         </Heading>
         <Flex col gap={sp("xxl")}>
-          <Text>Font st</Text>
           <Example
             code={`() => {
   const [value, setValue] = useState<number | undefined>();
@@ -39,7 +38,7 @@ export default function SelectPage() {
   />
 }`}
           >
-            <Select
+            <Combobox
               options={EXAMPLE_OPTIONS}
               value={value}
               onChange={setValue}
@@ -48,7 +47,7 @@ export default function SelectPage() {
           </Example>
 
           <Example code={`<Select disabled />`}>
-            <Select disabled />
+            <Combobox disabled />
           </Example>
         </Flex>
       </div>
