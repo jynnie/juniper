@@ -6,7 +6,7 @@ import { usePopper as useRawPopper } from "react-popper";
 import ReactDOM from "react-dom";
 import { Flex, Text } from "components";
 import { sp } from "utils";
-import { nanoid } from "nanoid";
+import { useUUID } from "hooks";
 
 // FIXME: Move to models
 export interface Option {
@@ -68,28 +68,46 @@ export function SearchableSelect({
   const { setReferenceElement, setPopperElement, styles, attributes } =
     usePopper();
   const inputRef = useRef<HTMLInputElement>();
-
-  // FIXME: Move to hooks
-  const uuid = useMemo(() => nanoid(), []);
+  const uuid = useUUID();
 
   // FIXME: Move to single hook for useCombobox
   const selectedOptionIdx = useMemo(
     () => (options || []).findIndex((o) => o.value === value),
     [options, value],
   );
-  const selectedOption = options?.[selectedOptionIdx];
+  const selectedOption: Option | undefined = options?.[selectedOptionIdx];
 
-  const [inputValue, setInputValue] = useState(selectedOption?.label || "");
+  const [searchValue, setSearchValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+
+  function isMatchingSearchValue(o: Option, search: string): boolean {
+    // All space separated search terms need to match the label somewhere
+    const searchTerms = search.toLowerCase().split(" ");
+    const label = o.label.toLowerCase();
+
+    let isMatching = true;
+    for (const term of searchTerms) {
+      if (!label.includes(term)) {
+        isMatching = false;
+        break;
+      }
+    }
+    return isMatching;
+  }
+
+  const filteredOptions = useMemo(
+    () => (options || []).filter((o) => isMatchingSearchValue(o, searchValue)),
+    [options, searchValue],
+  );
 
   const handleSelect = (option: Option) => () => {
     onChange?.(option.value);
-    setInputValue(option.label);
+    setSearchValue("");
   };
 
   function handleClear() {
     onChange?.(undefined);
-    setInputValue("");
+    setSearchValue("");
     inputRef.current?.select();
   }
 
@@ -98,9 +116,13 @@ export function SearchableSelect({
     setIsFocused(true);
   }
 
-  // TODO: Search & filter
   function handleInputChange(ev: React.ChangeEvent<HTMLInputElement>) {
-    setInputValue(ev.target.value);
+    setSearchValue(ev.target.value);
+  }
+
+  function handleBlur() {
+    setIsFocused(false);
+    setSearchValue("");
   }
 
   // TODO: Handle focusing on options via up/down arrows
@@ -118,13 +140,15 @@ export function SearchableSelect({
         aria-expanded={isFocused}
         aria-autocomplete="both"
         aria-owns="results"
-        aria-activedescendant={`combobox-option-${selectedOptionIdx}`}
+        aria-activedescendant={
+          !selectedOption ? undefined : `combobox-option-${selectedOptionIdx}`
+        }
         placeholder={placeholder || "Search..."}
         disabled={disabled}
-        value={inputValue}
+        value={searchValue || selectedOption?.label || ""}
         onChange={handleInputChange}
         onFocus={handleFocus}
-        onBlur={() => setIsFocused(false)}
+        onBlur={handleBlur}
       />
 
       <Flex gap={sp(4)} align="center">
@@ -161,8 +185,9 @@ export function SearchableSelect({
             id={`combobox-list-${uuid}`}
             role="listbox"
           >
-            {(options || []).map((option, i) => {
+            {filteredOptions.map((option, i) => {
               const isSelected = option.value === value;
+              // TODO: Handle really long labels
               return (
                 <li
                   key={i}
