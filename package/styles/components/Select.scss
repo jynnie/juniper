@@ -1,4 +1,4 @@
-.jnpr-select {
+.jnpr-searchableSelect {
   display: flex;
   align-items: center;
 
@@ -23,17 +23,17 @@
     }
   }
 
-  .jnpr-select-iconButton {
+  .jnpr-searchableSelect-iconButton {
     background: none;
     border: none;
     display: flex;
     align-items: center;
   }
-  &:not(.disabled) .jnpr-select-iconButton {
+  &:not(.disabled) .jnpr-searchableSelect-iconButton {
     cursor: pointer;
   }
 
-  .jnpr-select-chevronIcon {
+  .jnpr-searchableSelect-chevronIcon {
     transition: transform var(--transition-faster);
   }
 
@@ -82,6 +82,12 @@
     }
   }
 
+  &-noResults {
+    padding: var(--sp-sm);
+    text-align: center;
+    color: var(--text-color-caption);
+  }
+
   //* States
 
   &:hover:not(.disabled) {
@@ -92,7 +98,7 @@
     box-shadow: 0 0 0 var(--sp-xs) var(--gray-lighter);
     outline: none;
 
-    .jnpr-select-chevronIcon {
+    .jnpr-searchableSelect-chevronIcon {
       transform: rotate(180deg);
     }
   }
@@ -101,7 +107,7 @@
     box-shadow: 0 0 0 var(--sp-xs) var(--gray-lighter);
     outline: none;
 
-    .jnpr-select-chevronIcon {
+    .jnpr-searchableSelect-chevronIcon {
       transform: rotate(180deg);
     }
   }

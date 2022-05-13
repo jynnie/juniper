@@ -43,7 +43,6 @@ export default function SelectPage() {
               options={EXAMPLE_OPTIONS}
               value={value}
               onChange={setValue}
-              isClearable
             />
           </Example>
 
@@ -51,7 +50,7 @@ export default function SelectPage() {
             <Heading h2>Props</Heading>
           </Box>
 
-          <Example code={`<SearchableSelect disabled />`}>
+          <Example code={`<SearchableSelect disabled />`} title="Disabled">
             <SearchableSelect disabled />
           </Example>
 

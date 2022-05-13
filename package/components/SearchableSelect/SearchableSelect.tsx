@@ -22,7 +22,7 @@ interface SearchableSelectProps {
   value?: unknown;
   // eslint-disable-next-line no-unused-vars
   onChange?: (value: unknown) => void;
-  isClearable?: boolean;
+  isNotClearable?: boolean;
 }
 
 // FIXME: Move to helpers
@@ -64,7 +64,7 @@ export function SearchableSelect({
   options,
   value,
   onChange,
-  isClearable,
+  isNotClearable,
 }: SearchableSelectProps) {
   const { setReferenceElement, setPopperElement, styles, attributes } =
     usePopper();
@@ -159,7 +159,9 @@ export function SearchableSelect({
 
   return (
     <Box
-      className={cn(className, "jnpr-select", { disabled: !!disabled })}
+      className={cn(className, "jnpr-searchableSelect", {
+        disabled: !!disabled,
+      })}
       ref={setReferenceElement}
     >
       <input
@@ -183,9 +185,9 @@ export function SearchableSelect({
       />
 
       <Flex gap={sp(4)} align="center">
-        {isClearable && value !== undefined && (
+        {!isNotClearable && value !== undefined && (
           <button
-            className="jnpr-select-iconButton"
+            className="jnpr-searchableSelect-iconButton"
             disabled={disabled}
             onClick={handleClear}
           >
@@ -193,12 +195,12 @@ export function SearchableSelect({
           </button>
         )}
         <button
-          className="jnpr-select-iconButton"
+          className="jnpr-searchableSelect-iconButton"
           disabled={disabled}
           tabIndex={-1}
         >
           <ChevronDown
-            className="jnpr-select-chevronIcon"
+            className="jnpr-searchableSelect-chevronIcon"
             width="var(--sp-16)"
           />
         </button>
@@ -210,7 +212,7 @@ export function SearchableSelect({
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
-            className={cn("jnpr-select-optionContainer", {
+            className={cn("jnpr-searchableSelect-optionContainer", {
               visible: isFocused,
             })}
             id={`combobox-list-:${uuid}:`}
@@ -226,7 +228,8 @@ export function SearchableSelect({
                   id={`combobox-option-${i}`}
                   role="option"
                   aria-selected={isSelected}
-                  className={cn("jnpr-select-singleOption", {
+                  data-highlighted={isFocused}
+                  className={cn("jnpr-searchableSelect-singleOption", {
                     selected: isSelected,
                     focused: isFocused,
                   })}
@@ -237,6 +240,11 @@ export function SearchableSelect({
                 </li>
               );
             })}
+            {filteredOptions.length === 0 && (
+              <Text className="jnpr-searchableSelect-noResults">
+                No Results
+              </Text>
+            )}
           </ul>,
           document.body,
         )}
