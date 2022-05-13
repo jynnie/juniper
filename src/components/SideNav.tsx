@@ -26,7 +26,7 @@ const NAV = [
     title: "Data Entry",
     items: [
       {
-        title: "[WIP] Searchable Select",
+        title: "Searchable Select",
         path: "/data-entry/searchable-select",
       },
     ],

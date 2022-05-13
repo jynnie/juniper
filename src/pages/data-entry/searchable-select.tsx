@@ -21,7 +21,7 @@ export default function SelectPage() {
       </Head>
 
       <div>
-        <Heading h1>[WIP] Searchable Select</Heading>
+        <Heading h1>Searchable Select</Heading>
         <Heading h3 intent="secondary">
           Auto-complete {"&"} select options from large lists
         </Heading>
@@ -47,6 +47,7 @@ export default function SelectPage() {
 
           <Box>
             <Heading h2>Props</Heading>
+            <Text p>This section is a WIP</Text>
             {/* TODO: */}
           </Box>
 
