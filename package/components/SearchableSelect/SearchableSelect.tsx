@@ -113,7 +113,6 @@ export function SearchableSelect({
             {filteredOptions.map((option, i) => {
               const isSelected = option.value === value;
               const isFocused = focusedOptionIdx === i;
-              // TODO: Handle really long labels
               return (
                 <li
                   key={i}
@@ -127,7 +126,9 @@ export function SearchableSelect({
                   })}
                   onClick={handleSelect(option)}
                 >
-                  <Text>{option.label}</Text>
+                  <Text className="jnpr-searchableSelect-optionText">
+                    {option.label}
+                  </Text>
                   {isSelected && <Check width={16} />}
                 </li>
               );

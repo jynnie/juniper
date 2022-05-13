@@ -18,6 +18,10 @@
     border: none;
     background: none;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     &::placeholder {
       color: var(--text-color);
     }
@@ -66,6 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: -moz-available;
 
     padding: var(--sp-sm);
     padding-right: var(--sp-md);
@@ -79,7 +84,17 @@
     }
     &.selected {
       font-weight: bold;
+      .jnpr-searchableSelect-optionText {
+        max-width: calc(100% - 16px);
+      }
     }
+  }
+
+  &-optionText {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-noResults {
