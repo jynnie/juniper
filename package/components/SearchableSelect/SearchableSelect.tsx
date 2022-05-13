@@ -20,6 +20,7 @@ interface SearchableSelectProps {
   disabled?: boolean;
   options?: Option[];
   value?: unknown;
+  // eslint-disable-next-line no-unused-vars
   onChange?: (value: unknown) => void;
   isClearable?: boolean;
 }
@@ -68,7 +69,7 @@ export function SearchableSelect({
   const { setReferenceElement, setPopperElement, styles, attributes } =
     usePopper();
   const inputRef = useRef<HTMLInputElement>();
-  const uuid = useUUID();
+  const uuid = useUUID(4);
 
   // FIXME: Move to single hook for useCombobox
   const selectedOptionIdx = useMemo(
@@ -79,6 +80,7 @@ export function SearchableSelect({
 
   const [searchValue, setSearchValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [focusedOptionIdx, setFocusedOptionIdx] = useState<number | null>(null);
 
   function isMatchingSearchValue(o: Option, search: string): boolean {
     // All space separated search terms need to match the label somewhere
@@ -108,16 +110,17 @@ export function SearchableSelect({
   function handleClear() {
     onChange?.(undefined);
     setSearchValue("");
-    inputRef.current?.select();
+    handleFocus();
+  }
+
+  function handleInputChange(ev: React.ChangeEvent<HTMLInputElement>) {
+    setSearchValue(ev.target.value);
   }
 
   function handleFocus() {
     inputRef.current?.select();
     setIsFocused(true);
-  }
-
-  function handleInputChange(ev: React.ChangeEvent<HTMLInputElement>) {
-    setSearchValue(ev.target.value);
+    setFocusedOptionIdx(null);
   }
 
   function handleBlur() {
@@ -125,7 +128,34 @@ export function SearchableSelect({
     setSearchValue("");
   }
 
-  // TODO: Handle focusing on options via up/down arrows
+  function handleKeyDown(ev: React.KeyboardEvent) {
+    const isNoOptionFocused = focusedOptionIdx === null;
+
+    if (ev.key === "ArrowDown") {
+      const isLastOptionFocused =
+        focusedOptionIdx === filteredOptions.length - 1;
+      if (isNoOptionFocused || isLastOptionFocused) {
+        setFocusedOptionIdx(0);
+      } else {
+        setFocusedOptionIdx(focusedOptionIdx + 1);
+      }
+    } else if (ev.key === "ArrowUp") {
+      const isFirstOptionFocused = focusedOptionIdx === 0;
+      if (isNoOptionFocused) return;
+      if (isFirstOptionFocused) {
+        setFocusedOptionIdx(filteredOptions.length - 1);
+      } else {
+        setFocusedOptionIdx(focusedOptionIdx - 1);
+      }
+    } else if (ev.key === "Enter") {
+      handleSelect(filteredOptions[focusedOptionIdx])();
+      handleFocus();
+    } else if (ev.key === "Escape") {
+      handleFocus();
+      // Special case where we want to hide the suggestions
+      setIsFocused(false);
+    }
+  }
 
   return (
     <Box
@@ -136,7 +166,7 @@ export function SearchableSelect({
         ref={inputRef}
         type="text"
         role="combobox"
-        aria-controls={`combobox-list-${uuid}`}
+        aria-controls={`combobox-list-:${uuid}:`}
         aria-expanded={isFocused}
         aria-autocomplete="both"
         aria-owns="results"
@@ -149,6 +179,7 @@ export function SearchableSelect({
         onChange={handleInputChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
       />
 
       <Flex gap={sp(4)} align="center">
@@ -182,11 +213,12 @@ export function SearchableSelect({
             className={cn("jnpr-select-optionContainer", {
               visible: isFocused,
             })}
-            id={`combobox-list-${uuid}`}
+            id={`combobox-list-:${uuid}:`}
             role="listbox"
           >
             {filteredOptions.map((option, i) => {
               const isSelected = option.value === value;
+              const isFocused = focusedOptionIdx === i;
               // TODO: Handle really long labels
               return (
                 <li
@@ -196,6 +228,7 @@ export function SearchableSelect({
                   aria-selected={isSelected}
                   className={cn("jnpr-select-singleOption", {
                     selected: isSelected,
+                    focused: isFocused,
                   })}
                   onClick={handleSelect(option)}
                 >

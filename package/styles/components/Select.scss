@@ -73,7 +73,8 @@
     transition: background var(--transition-fast);
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &.focused {
       background: var(--gray1);
     }
     &.selected {
