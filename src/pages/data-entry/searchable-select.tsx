@@ -1,9 +1,8 @@
 import Head from "next/head";
-import { Box, Flex, Text, Heading, Button } from "components";
+import { Box, Flex, Text, Heading, SearchableSelect } from "components";
 import { sp } from "utils";
 
 import { Example } from "../../components/Example";
-import { SearchableSelect } from "components/SearchableSelect/SearchableSelect";
 import { useState } from "react";
 
 const EXAMPLE_OPTIONS = [
@@ -48,9 +47,10 @@ export default function SelectPage() {
 
           <Box>
             <Heading h2>Props</Heading>
+            {/* TODO: */}
           </Box>
 
-          <Example code={`<SearchableSelect disabled />`} title="Disabled">
+          <Example code={`<SearchableSelect disabled />`} name="Disabled">
             <SearchableSelect disabled />
           </Example>
 

@@ -11,6 +11,9 @@ export * from "./Button";
 export * from "./Text";
 export * from "./Toast";
 
+// Data Entry Components
+export * from "./SearchableSelect";
+
 // Navigation Components
 export * from "./Menu";
 
