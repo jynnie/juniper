@@ -48,7 +48,7 @@ export default function SelectPage() {
           <Box>
             <Heading h2>Props</Heading>
             <Text p>This section is a WIP</Text>
-            {/* TODO: */}
+            {/* TODO: Add Searchable Select props */}
           </Box>
 
           <Example code={`<SearchableSelect disabled />`} name="Disabled">

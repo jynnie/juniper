@@ -6,18 +6,19 @@
 
 - [x] colors\*
 - [x] button\*
-- [ ] utility CSS classes
-  - [ ] colors matched to vg rarities
 - [x] flex, built off box\*
 - [x] click out wrapper\*
 - [x] copy value on click wrapper\*
+- [ ] utility CSS classes
+  - [ ] colors matched to vg rarities
 - [ ] add react-markdown integration
 
 🌶🌶 Good value add
 
 - [x] text\*
 - [x] link\*
-- [ ] combobox (autocomplete select)\*
+- [x] combobox (autocomplete select)\*
+- [x] toast\*
 - [ ] basic select\*
 - [ ] multiselect
 - [ ] tables w/ useTable
@@ -30,7 +31,6 @@
 - [ ] error\*
 - [ ] popover
 - [ ] copy text in field
-- [x] toast\*
 - [ ] card\*
 
 🌶 Should have, but either low impact or high effort
